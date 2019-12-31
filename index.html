@@ -1,0 +1,74 @@
+<!-- Name: Aaditya Mukherjee
+    email: aaditya_mukherjee@student.uml.edu
+    GUI Programming I, Assignment 8
+    Sources: https://www.youtube.com/watch?v=zhxQhgm4yk4&t=200s    (The first two sources were used to figure out how to make multiplication tables with for loops)
+           : https://www.youtube.com/watch?v=zhxQhgm4yk4&t=200s
+           : https://github.com/jquery-validation/jquery-validation/issues/2030 (This page was used to make the greaterThan function)
+           : https://www.w3schools.com/
+           : https://api.jqueryui.com/theming/icons/
+           : hhtps://github.com/         (Helped immensely to make the tabs section of this assignment)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Bootstrap CDN added for applying easy css to the multiplication table and button -->
+    <link href = "CSS\table.css" rel = "stylesheet">
+    <link rel = "stylesheet" href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+
+
+    <title>Javascript table</title>
+  </head>
+  <body>
+    <div id = "wrapper">
+      <div id = "header">
+
+   <h1>Multiplication Table</h1>
+   <h2>(Positive integers only!)</h2>
+
+ </div>
+<!-- Form to which JQuery validation will be applied to -->
+<form id = "formname" onsubmit="return false">
+    <label>Enter Minimum Column Value:</label>
+    <input id = "min_column" name= "min_column" type = "text">
+    <div id="min_col_slider"></div>      <!-- divs made for using sliders -->
+    <br>
+    <label>Enter Maximum Column Value:</label>
+    <input id = "max_column" name= "max_column" type = "text">
+    <div id="max_col_slider"></div>
+    <br>
+    <label>Enter Minimum Row Value:</label>
+    <input id = "min_row" name="min_row" type ="text">
+    <div id="min_row_slider"></div>
+    <br>
+    <label>Enter Maximum Row Value:</label>
+    <input id = "max_row" name="max_row" type = "text">
+    <div id="max_row_slider"></div>
+    <br>
+    <button class="btn btn-primary" type="submit" value="Submit">Make table</button>
+    <button class="btn btn-danger" id="save" type="button" onclick = "table_tabs()">Save Table</button>  <!-- Save button will call the function to create tabs to store the tables -->
+  </form>
+
+  <div id = "tableu">
+    <table class = "table table-bordered" id = "multi_table">
+      </table>
+      </div>
+
+
+        <div id="tabs"><ul></ul></div>
+
+  </div>
+
+
+
+<!--JQuery, Jquery validation plugin and JQuery UI library CDNs -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"></script>
+  <script src = "JS/table.js"></script>
+  </body>
+  </html>
